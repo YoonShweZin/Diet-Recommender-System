@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diet Recommender System using Collaborative Filtering Technique Index Page</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/index.css">
+
+</head>
+
+<body>
+    <!-- Flash Message Shows when login failed and registration pass or failed -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for msg in messages %}
+    <script>
+        alert('{{ msg }}');
+    </script>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <!-- First Container For Logo-->
+    <div class="container-fluid bg-1">
+        <!-- <img src="static\images\logo1.png" class="img-responsive" style="display:inline" alt="MyDiet" width="35%" height="13%"> -->
+        <img src="static\images\blue.png" alt="My Diet Logo">
+        <p>My Diet Recommendation System</p>
+    </div>
+
+    <!-- Second Container For Login/Register-->
+    <div class="container-fluid bg-2 text-left">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Please Sign-Up/Sign-In To Use the System.</h3>
+            </div>
+            <div class="panel-body">
+                <!-- tabs -->
+                <ul id="dTab" class="nav nav-tabs">
+                    <li class="active"><a href="#pane1" data-toggle="tab">Register</a></li>
+                    <li><a href="#pane2" data-toggle="tab">Login</a></li>
+                    <!--<li><a href="#pane3" data-toggle="tab"></a></li>-->
+                </ul>
+
+                <div class="tab-content">
+                    <!-- Register User Side -->
+                    <div id="pane1" class="tab-pane fade in active">
+                        <form action="{{ url_for('userRegister') }} " method="POST">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="control-label" for="uNname" id="usern">Username</label>
+                                    <input type="text" id="userName" name="uName"
+                                        placeholder="Username can contain any letters or numbers"
+                                        class="form-control" required/>
+                                </div>
+                                <!-- E-mail -->
+                                <div class="form-group">
+                                    <label class="control-label" for="email">E-mail</label>
+                                    <input type="text" id="mail" name="email" placeholder="Please provide your E-mail"
+                                        class="form-control" required/>
+                                </div>
+                                <!-- Password-->
+                                <div class="form-group">
+                                    <label class="control-label" for="password">Password</label>
+                                    <input type="password" id="pwd" name="password"
+                                        placeholder="Password should be at least 7 characters" class="form-control" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}"  required/>
+                                </div>
+                                <!-- Password Confirmation -->
+                                <div class="form-group">
+                                    <label class="control-label" for="password_confirm">Password (Confirm)</label>
+                                    <input type="password" id="pConfirm" name="password_confirm"
+                                        placeholder="Please confirm password" class="form-control" required />
+                                </div>
+
+                                <button class="btn btn1">Register</button>
+
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <!-- login side start-->
+                    <div id="pane2" class="tab-pane fade">
+                        <form role="form" action="{{ url_for('userLogin') }}" method="POST">
+                            <div class="form-group">
+                                <label for="loginEmail" id="ema">Email address</label>
+                                <input type="email" class="form-control" id="mail" name="email"
+                                    placeholder="Enter email" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Password"  required/>
+                            </div>
+                            <div class="centered ">
+                                <button type="submit" class="btn btn2">Login</button>
+                                <button type="reset" class="btn btn2" id="forgetBtn">Forget Password</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- login-slide-ends-->
+
+                    <!-- password forget -->
+                    <div id="pane3" class="tab-pane fade"> 
+                        <form role="form" action="" method="POST">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    placeholder="Request a password reset. Enter your email" />
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Reset Password</button>
+                            <button type="reset" class="btn btn-success" id="loginBtn">Login</button>
+                        </form>
+                    </div>
+                    <!-- password forget end-->
+
+                </div>
+                <!-- -->
+            </div>
+        </div>
+    </div> <!--container fluid bg-2 div -->
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-3 text-center navbar-fixed-bottom">
+        <p>Designed and Maintained by Yoon Ei Shwe Zin </p>
+    </footer>
+
+</body>
+<script>
+    // document.body.style.backgroundColor = "#EFEEEE";
+    $(document).ready(function () {
+        $("#forgetBtn").click(function () {
+            $("#dTab li:eq(2) a").tab("show");
+            $(".tab-content div.active").removeClass("active in");
+            $(".tab-content").find("#pane3").addClass("active in");
+        });
+        $("#loginBtn").click(function () {
+            $("#dTab li:eq(1) a").tab("show");
+            $(".tab-content div.active").removeClass("active in");
+            $(".tab-content").find("#pane2").addClass("active in");
+        });
+    });
+</script>
+
+</html>

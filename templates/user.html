@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diet Recommender System using Collaborative Filtering Technique Index Page</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/index.css">
+</head>
+
+<body>
+    <!-- Flash Message Shows when login pass-->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for msg in messages %}
+    <script>
+        alert('{{ msg }}');
+    </script>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <!-- First Container For Logo-->
+    <div class="container-fluid bg-1">
+        <!-- <img src="static\images\logo1.png" class="img-responsive" style="display:inline" alt="MyDiet" width="35%" height="13%"> -->
+        <img src="static\images\blue.png" alt="My Diet Logo">
+        <p>My Diet Recommendation System</p>
+        
+        <h4><a href="{{ url_for('logout') }}">Logout</a></h4>
+        <h4>{{emailAddr}}</h4>
+    </div>
+
+    <!-- Second Container For Login/Register-->
+    <div class="container-fluid bg-2 text-left">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Please Provide Your Personal Information</h3>
+            </div>
+            <div class="panel-body">
+                <!-- user personal info -->
+                <form action="/userInfo" method="POST">
+                    <div class="row">
+                        <div class="col-md-5 ">
+                            <div class="form-group">
+                                <label class="control-label" for="user_age" id="user_age">Age</label>
+                                <input type="text" id="user_age" name="age" placeholder="Enter the Age"
+                                    class="form-control" type="number" required />
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-md-offset-1">
+                            <div class="form-group">
+                                <label class="control-label" for="user_weight" id="user_weight">Weight (kg)</label>
+                                <input type="text" id="user_weight" name="weight" placeholder="Enter the Weight in kg"
+                                    class="form-control" type="number" required step="1" pattern="\d+"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- user personal height/gender -->
+                    <div class="row">
+                        <div class="col-md-5 ">
+                            <div class="form-group">
+                                <label class="control-label" for="height_feet" id="height_feet">Height (cm)</label>
+                                <input type="text" id="height_feet" name="height" placeholder="Enter the Height"
+                                    class="form-control" type="number" required />
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-3 ">
+                            <div class="form-group">
+                                <label class="control-label" for="height_inch" id="height_inch"
+                                    style="color:transparent">Height in Feet and Inch</label>
+                                <input type="text" id="height_inch" name="inch" placeholder="Height in Feet and Inch"
+                                    class="form-control" type="number" required />
+                            </div>
+                        </div> -->
+
+                        <div class="form-group col-md-5 col-md-offset-1">
+                            <label class="control-label">Gender</label><br>
+                            <select class="form-select col-md-12" name="gender" id="select">
+                                <option hidden selected style="color:gray">Select the Gender</option>
+                                <option value="male" class="others">Male</option>
+                                <option value="female" class="others">Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- user personal bodygoal/activity -->
+                    <div class="row">
+                        <div class="form-group col-md-5">
+                            <label class="control-label">Body Goal</label><br>
+                            <select class="form-select col-md-12" name="goal" id="selects">
+                                <option hidden selected style="color:gray">Select the Body Goal</option>
+                                <option value="gain" class="others">Weight Gain</option>
+                                <option value="loss" class="others">Weight Loss</option>
+                                <option value="healthy" class="others">Healthy</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-5 col-md-offset-1">
+                            <label class="control-label">Daily Activity Level </label><br>
+                            <select class="form-select col-md-12" name="activity" id="sel">
+                                <option hidden selected style="color:gray">Select Your Daily Activity Level
+                                </option>
+                                <option value="sedentary" class="others">Sedentary Life - No activity (sedentary)</option>
+                                <option value="lightActive" class="others">2 to 3 time activity a week (lightActive)</option>
+                                <option value="moderateActive" class="others">4 to 5 time activity a week (moderateActive)</option>
+                                <option value="veryActive" class="others">6 to 7 time activity a week (veryActive)</option>
+                            </select>
+                        </div>
+                    </div> <!--bootstrap row -->
+
+                    <!-- Select Option change color when value being selected -->
+                    <script>
+                        // for gender
+                        $(document).ready(function () {
+                            $('#select').css('color', 'gray');
+                            $('#select').change(function () {
+                                var current = $('#select').val();
+                                if (current != 'null') {
+                                    $('#select').css('color', 'black');
+                                } else {
+                                    $('#select').css('color', 'gray');
+                                }
+                            });
+                        });
+
+                        // for body goal
+                        $(document).ready(function () {
+                            $('#selects').css('color', 'gray');
+                            $('#selects').change(function () {
+                                var current = $('#selects').val();
+                                if (current != 'null') {
+                                    $('#selects').css('color', 'black');
+                                } else {
+                                    $('#selects').css('color', 'gray');
+                                }
+                            });
+                        });
+
+                        // for daily activity level
+                        $(document).ready(function () {
+                            $('#sel').css('color', 'gray');
+                            $('#sel').change(function () {
+                                var current = $('#sel').val();
+                                if (current != 'null') {
+                                    $('#sel').css('color', 'black');
+                                } else {
+                                    $('#sel').css('color', 'gray');
+                                }
+                            });
+                        });
+                    </script>
+
+                    <button type="submit" class="btn btn3">Calculate</button>
+                </form>
+                <!-- -->
+            </div> <!--panel body -->
+        </div> <!--panel default -->
+    </div> <!--container fluid bg-2 div -->
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-3 text-center navbar-fixed-bottom">
+        <p>Designed and Maintained by Yoon Ei Shwe Zin </p>
+    </footer>
+
+</body>
+
+</html>

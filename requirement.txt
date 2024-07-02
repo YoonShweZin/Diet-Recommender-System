@@ -1,0 +1,5 @@
+flask
+pandas
+scikit-learn rather than sklearn
+regex
+sqlite3

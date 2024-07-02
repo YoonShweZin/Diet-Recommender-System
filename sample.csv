@@ -1,0 +1,6 @@
+﻿RecipeId,Name,RecipeCategory,Keywords,RecipeIngredientParts,AggregatedRating,Calories,FatContent,SaturatedFatContent,CholesterolContent,SodiumContent,FiberContent,SugarContent,ProteinContent
+42,Cabbage Soup,Chicken,"Low Protein, Vegan, Low Cholesterol, Healthy, Winter, < 60 Mins, Easy","cabbage, tomatoes",4.5,500,0.4,0.1,0,200,4.8,17.7,4.3
+135,Tomato Cabbage Sandwich Maker Snack,Cherry,"Low Protein, Low Cholesterol, Healthy, < 30 Mins, Easy",tomatoes,5,450,0.8,0.2,0,171.3,0.6,1.1,1.9
+117194,Chicken Wrap,Breakfast,"Lunh/Snaks, Apple, Fruit, Low Protein, Low Cholesterol, Toddler Friendly, Healthy, Kid Friendly, Brunh, < 15 Mins, No Cook, Beginner Cook, Easy, Inexpensive","chicken, tomato",5,430,0.3,0.1,0,1.9,5.1,18.9,0.5
+88443,Mixed Salad,Chicken,"Fruit, Low Protein, Low Cholesterol, Toddler Friendly, Healthy, Kid Friendly, Spring, Summer, < 15 Mins, Easy","peanut, cheese, tomatoes, onion",5,71.8,0.2,0,0,1.4,3.3,14.3,0.4
+8843,Salad Mixed,Tuna,"Fruit, Low Protein, Low Cholesterol, Toddler Friendly, Healthy, Kid Friendly, Spring, Summer, < 15 Mins, Easy","mushrooms, pasta, bok choy",5,71.8,0.2,0,0,1.4,3.3,14.3,0.4

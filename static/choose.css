@@ -1,0 +1,125 @@
+/* body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+} */
+
+body{
+    background-color: #EFEEEE;
+}
+/* logo section */
+.bg-1 { 
+    background-color: #00BCD4; /* Navy */
+    color: #ffffff;
+}
+.bg-1 img{ 
+    width: 9%;
+    float: left;
+    margin-left: 33%;
+}
+.bg-1 p{ 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    float: left;
+    padding-top: 2.5%;
+}
+.bg-1 h4{
+    float: right;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.bg-1 a{
+    font-size: 18px;
+    color: white;
+    padding-left: 30px;  
+} 
+
+/* choose food section */
+.bg-2 { 
+    /* background-color: #474e5d;  Dark Blue */
+    background-color: #EFEEEE;
+    color: black;
+}
+
+.panel-title{
+    font-size: 18px;
+}
+
+.panel-default{
+    /* background-color: red; */
+    margin-top: 20px;
+    margin-left: 13%;
+    margin-right: 13%;
+    font-family: 'Times New Roman', Times, serif;
+    /* font-size: 16px; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.row{
+    width:80%;
+    margin:auto;
+    margin-bottom: 20px;
+    /* background-color: blueviolet; */
+}
+
+.row strong{
+    font-size: 16px !important;
+}
+
+/* recommend meal section */
+.form-group{
+    /* background-color: #00BCD4; */
+    border: 2px solid #034357;
+    background-color: #F9F9F9;
+    font-size: 18px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+.list-group-item{
+    overflow-y: auto;
+    background-color: #F9F9F9;
+}
+
+.btn3{
+    margin-bottom: 20px !important;
+}
+
+.btn3 a{
+    text-decoration: none;
+    color: #034357;
+}
+
+.btn4{
+    margin-bottom: 20px !important;
+}
+
+.btn4 a{
+    text-decoration: none;
+    color: #034357;    
+}
+
+.btn{
+    width: 150px;
+    color: #034357;
+    font-size: 18px;
+    display: block;
+    margin: 6px auto;
+}
+.btn:hover{
+    border-bottom: 2px solid #034357;
+    /* border: 2px solid #1abc9c; */
+}
+
+/* footer */
+.bg-3{ 
+    background-color: #034357; 
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+.container-fluid {
+    padding-top: 10px;
+    padding-bottom: 10px;
+ }

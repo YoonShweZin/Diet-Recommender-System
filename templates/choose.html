@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diet Recommender System using Collaborative Filtering Technique chooseed Food</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/choose.css">
+    <!-- for dropdown option -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Flash Message Shows when login pass-->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for msg in messages %}
+    <script>
+        alert('{{ msg }}');
+    </script>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <!-- First Container For Logo-->
+    <div class="container-fluid bg-1">
+        <!-- <img src="static\images\logo1.png" class="img-responsive" style="display:inline" alt="MyDiet" width="35%" height="13%"> -->
+        <img src="static\images\blue.png" alt="My Diet Logo">
+        <p>My Diet Recommendation System</p>
+        <h4><a href="{{ url_for('logout') }}">Logout</a></h4>
+        <h4>{{emailAddr}}</h4>
+    </div>
+
+    <!-- Second Container For choose Food-->
+    <div class="container-fluid bg-2 text-left">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Choose Your Ideal Ingredient</h3>
+            </div>
+
+            <div class="panel-body">
+                <form action="/choose" method="POST">
+
+                    <!-- dropdown options -->
+                    <div class="row d-flex justify-content-center mt-100">
+                        <p><strong>Select Vegetarian Ingredients:</strong></p>
+                        <select id="choices-multiple-remove-button"
+                            placeholder="Select Vegetarian Ingredients eg:Mushroom" name="ingredient"  multiple required>
+                            <option value="">Avoid Choosing</option>
+                            <option value="bok choy">Bok Choy</option>
+                            <option value="onion">Onion</option>
+                            <option value="tomato">Tomato</option>
+                            <option value="cabbage">Cabbage</option>
+                            <option value="mushrooms">Mushroom</option>
+                            <option value="potatoes">Potatoe</option>
+                            <option value="carrot">Carrot</option>
+                            <option value="rice">Rice</option>
+                            <option value="eggplant">EggPlant</option>
+                            <option value="lettuce">Lettuce</option>
+                            <option value="acorn squash">Acron Squash</option>
+                            <option value="pasta">Pasta</option>                            
+                            <option value="apple">Apple</option>   
+                            <option value="radish">Radish</option> 
+                            <option value="basil">Basil</option> 
+                            <option value="asparagus">Asparagus</option>                                                                                                                              
+                        </select>
+                    </div>
+
+                    <!-- dropdown options nuts-->
+                    <div class="row d-flex justify-content-center mt-100">
+                        <p><strong>Select Nuts & Seeds:</strong></p>
+                        <select id="choices-multiple-remove-button" placeholder="Select Nuts & Seeds eg:Peanuts" name = "ingredientP" multiple required>
+                            <option value="">Avoid Choosing</option>
+                            <option value="salted cashews">Cashew</option>
+                            <option value="walnet">Walnet</option>
+                            <option value="water chestnuts">Water chestnut</option>
+                            <option value="hazlenuts">Hazlenut</option>
+                            <option value="nutmeg">Nutmeg</option>
+                            <option value="peanut">Peanut</option>
+                            
+                            <!-- {% for n in nut %}
+                            <option value="{{n}}"> {{n}}</option>
+                            {% endfor %} -->
+                        </select>
+                    </div>
+
+                    <!-- dropdown options meat-->
+                    <div class="row d-flex justify-content-center mt-100">
+                        <p><strong>Select Non-Vegetarian Ingredients:</strong></p>
+                        <select id="choices-multiple-remove-button" placeholder="Select Non-Vegetarian Ingredients eg:Beef" name="ingredientNVeg"
+                         multiple required>
+                            <option value="">Avoid Choosing</option>
+                            <option value="">Only Vegetable</option>
+                            <option value="Lobster">Lobster</option>
+                            <option value="Octopus">Octopus</option>
+                            <option value="Pork">Pork</option>
+                            <option value="Poultry">Poultry</option>
+                            <option value="Tilapia">Tilapia</option>
+                            <option value="Tuna">Tuna</option>
+                            <option value="Squid">Squid</option>
+                            <option value="Lamb/Sheep">Lamb/Sheep</option>
+                            <option value="Ham">Ham</option>
+                            <option value="Chicken">Chicken</option>
+                            <option value="Crab">Crab</option>
+                            <option value="Deer">Deer</option>
+                            <option value="Catfish">Catfish</option>
+                            <option value="Beef">Beef</option>
+                            <option value="Duck">Duck</option>
+                            <option value="Cheese">Cheese</option>
+                            <option value="Meat">Meat</option>
+                            <option value="Whitefish">Whitefish</option>
+                            
+                            <!-- {% for nveg in non_veg %}
+                            <option value="{{nveg}}">{{nveg}}</option>
+                            {% endfor %} -->
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Recommend</button>
+                </form>
+            </div> <!-- div panel body-->
+        </div> <!-- div panel default-->
+    </div> <!--container fluid bg-2 div -->
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-3 text-center navbar-fixed-bottom">
+        <p>Designed and Maintained by Yoon Ei Shwe Zin </p>
+    </footer>
+
+</body>
+<script>
+    document.body.style.backgroundColor = "#EFEEEE";
+    $(document).ready(function () {
+        var multipleCancelButton = new Choices('#choices-multiple-remove-button', {           
+            removeItemButton: true,
+            maxItemCount: 1,
+            searchResultLimit: 3,
+            renderChoiceLimit: 3
+        });
+    });
+</script>
+
+</html>

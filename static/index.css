@@ -1,0 +1,175 @@
+/* body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+} */
+
+body{
+    background-color: #EFEEEE;
+}
+
+/* logo section */
+.bg-1 { 
+    background-color: #00BCD4; /* Navy */
+    color: #ffffff;
+}
+.bg-1 img{ 
+    width: 9%;
+    float: left;
+    margin-left: 33%;
+}
+.bg-1 p{ 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    float: left;
+    padding-top: 2.5%;
+}
+
+.bg-1 h4{
+    float: right;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.bg-1 a{
+    font-size: 18px;
+    color: white;
+    padding-left: 30px;  
+} 
+
+/* container section 2 (login/register/userinfo/choose)*/
+.bg-2 { 
+    /*background-color: #474e5d;  Dark Blue */
+    background-color: #EFEEEE;
+    color: #ffffff;
+}
+
+.panel-title{
+    font-size: 18px;
+}
+
+.panel-default{
+    /* background-color: blue; */
+    margin-top: 15px;
+    margin-left: 13%;
+    margin-right: 13%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#dTab li {
+    font-size:18px;
+}
+
+#dTab a:hover{
+    color:#034357;
+    border-bottom: 2px solid #034357;
+    background-color: #00BCD4;
+}
+
+.form-group label {
+    color: black;
+    /* padding-top: 7px; */
+}
+
+#usern, #ema{
+    padding-top: 15px;
+}
+
+.form-group input{
+    font-size: 16px;
+    /* padding: 20px; */
+    background-color: #F9F9F9;
+    color: black;
+}
+ .btn1{
+    width: 50%;
+    color: #034357;
+    font-size: 17px;
+    display: block;
+    margin: 6px auto;
+    padding: 10px;
+}
+.btn1:hover{
+    border-bottom: 2px solid #034357;
+} 
+
+/* .btn{ 
+    /* width: 150px;
+    margin: 0 auto;
+    display: inline;
+    background-color: #00BCD4;
+    font-size: 18px; */
+    /* background-color:#00BCD4;
+    color: #ffffff;
+    border-radius: 5px;
+    display: block;
+    width: 150px;
+    margin: auto;
+    cursor:pointer;
+} */
+
+.centered{
+    display: flex;
+}
+.btn2{
+    color:#034357;
+    font-size: 17px;
+    flex-grow: 1;
+    margin: 10px;
+    padding: 10px;
+}
+.btn2:hover{
+    border-bottom: 2px solid #034357;
+} 
+
+/* userinfo form design */
+/* .row{
+    width:80%;
+    margin:auto;
+    background-color: red;
+} */
+
+.col-md-3{
+    width:232px !important;
+}
+
+.form-select{
+    padding:7px;
+    background-color: #F9F9F9;
+    border-radius: 4px;  
+    color:grey;
+}
+.others {
+    color:black
+}
+
+
+.btn3{
+    width: 50%;
+    color: #034357;
+    font-size: 17px;
+    display: block;
+    margin: 6px auto;
+    padding: 10px;
+    margin-top: 20px;
+}
+.btn3:hover{
+    border-bottom: 2px solid #034357;
+} 
+
+/* footer */
+.bg-3{ 
+    background-color: #034357; 
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    /* margin-top:14px; */
+}
+
+.container-fluid {
+    padding-top: 10px;
+    padding-bottom: 10px;
+ }
+
